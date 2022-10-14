@@ -1,0 +1,46 @@
+<div class="pokemon-results">
+<div>
+  {{setTypes()}}
+  <h2>
+    {{ pokimanx.name }}
+  </h2>
+</div>
+<div class="type">
+
+  <h4>Type:</h4>
+  <!-- {{ pokimanx.type }} -->
+  <div *ngIf="Fire">
+    <div class ="Fire">Fire</div>
+  </div>
+  <div *ngIf="Water">
+    <div class ="Water">Water</div>
+  </div>
+  <div *ngIf="Flying">
+    <div class ="Flying">Flying</div>
+  </div>
+  <div *ngIf="Grass">
+    <div class ="Grass">Grass</div>
+  </div>
+  <div *ngIf="Ground">
+    <div class ="Ground">Ground</div>
+  </div>
+  <div *ngIf="Poison">
+    <div class ="Poison">Poison</div>
+  </div>
+
+
+  </div>
+  <div>
+  <h4>Weakness:</h4>
+  {{ pokimanx.weakness }}
+</div>
+<div>
+  <br />
+  <img src="{{ pokimanx.image }}" />
+</div>
+
+<h1>
+  {{getMet()}}
+</h1>
+</div>
+

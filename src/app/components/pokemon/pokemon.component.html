@@ -1,0 +1,10 @@
+<p>pokemonworks!</p>
+
+
+
+
+<app-pokemon-item
+  *ngFor="let pokemon of pokemonCards | filter: searchText"
+  [pokimanx]="pokemon"
+>
+</app-pokemon-item>

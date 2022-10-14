@@ -1,0 +1,68 @@
+.Fire{
+    background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+    background-color: #fd7d24;
+    color: #fff;
+    
+}
+.Water{
+    background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+    background-color: #4592c4;
+    color: #fff;
+    
+}
+.Flying{
+    background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background-color: #3dc7ef;
+    color: #212121;
+    
+}
+.Grass{
+    background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background-color: #9bcc50;
+    color: #212121;
+    position: relative;
+    
+    text-align: center;
+
+}
+.Ground{
+    background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+    background-color: #f7de3f;
+    color: #212121;
+    width: 38%;
+}
+.Poison{
+    background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+    background-color: #b97fc9;
+    
+    color: #fff;
+}
+
+.pokemon-results{
+    font-family: "Flexo-Medium",arial,sans-serif;
+    border-radius: 3px;
+    line-height: 18px;
+    
+    border: 50px;
+    width: 30%;
+    float: left;
+    font-size: 11px;
+    text-align: center;
+    
+}
+.type{
+    text-align: center;
+    margin-left: 60px;
+    margin-right:60px;
+}
+.hold{
+    margin: 10px 80px 10px;
+    max-width: 110px;
+
+    background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background-color: #9bcc50;
+    color: #212121;
+    position: relative;
+    width:50%;
+    text-align: center;
+}

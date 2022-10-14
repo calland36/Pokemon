@@ -1,0 +1,68 @@
+{
+  "pokemonCard":[
+    {
+      "id": 1,
+      "name": "Bulbasaur",
+      "type": "Grass/Poison",
+      "weakness": "Fire/Psychic/Flying/Ice",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+    },
+    {
+      "id": 2,
+      "name": "Ivysaur",
+      "type": "Grass/Poison",
+      "weakness": "Fire/Psychic/Flying/Ice",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png"
+    },
+	{
+      "id": 3,
+      "name": "Venusaur",
+      "type": "Grass/Poison",
+      "weakness": "Fire/Psychic/Flying/Ice",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/003.png"
+    },
+	{
+      "id": 4,
+      "name": "Charmander",
+      "type": "Fire",
+      "weakness": "Water/Ground/Rock",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png"
+    },
+	{
+      "id": 5,
+      "name": "Charmeleon",
+      "type": "Fire",
+      "weakness": "Water/Ground/Rock",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png"
+    },
+	{
+      "id": 6,
+      "name": "Charizard",
+      "type": "Fire/Flying",
+      "weakness": "Water/Electric/Rock",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"
+    },
+	{
+      "id": 7,
+      "name": "Squirtle",
+      "type": "Water",
+      "weakness": "Grass/Electric",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+    },
+	{
+      "id": 8,
+      "name": "Wartortle",
+      "type": "Water",
+      "weakness": "Grass/Electric",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
+    },
+	{
+      "id": 9,
+      "name": "Blastoise",
+      "type": "Water",
+      "weakness": "Grass/Electric",
+	  "image":"https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
+    }
+	
+  ]
+}

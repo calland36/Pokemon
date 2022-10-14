@@ -1,0 +1,19 @@
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<input type="text" class="search" [(ngModel)]="searchText" />
+<br />
+<app-pokemon-item
+  *ngFor="let pokiman of pokemonCards | filter: searchText"
+  [pokimanx]="pokiman"
+>
+</app-pokemon-item>
+
+<!--
+<app-task-item
+  *ngFor="let taskie of tasks"
+  [taskx]="taskie"
+  (onDeleteTask)="deleteTask(taskie)"
+  (onToggleReminder)="toggleReminder(taskie)"
+>
+</app-task-item>
+
+-->

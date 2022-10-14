@@ -1,0 +1,17 @@
+    <!--
+        This is what is giving us a green mark next to the task
+        [ngClass]="{ reminder: taskx.reminder }"
+    -->
+<div [ngClass]="{ reminder: taskx.reminder }" class ="task" (dblclick)="onToggle(taskx)">
+    <!--
+        Calland Notes: Here is where we created a red X using the https://github.com/FortAwesome/angular-fontawesome
+        font awesome stuff. the faTimes was the X, and then we used the [ngStyles] and gave it a red color.
+    -->
+    <h3>
+        {{taskx.text}} 
+        <fa-icon 
+        (click)="onDelete(taskx)"
+        [ngStyle]="{'color': 'red'}" [icon]="faTimes"></fa-icon>
+    </h3>
+    <p>{{taskx.day}}</p>
+</div>
