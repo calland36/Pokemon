@@ -19,6 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
+import { PokemonWeaknessComponent } from './components/pokemon-weakness/pokemon-weakness.component';
+import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent},
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
     FooterComponent,
     PokemonItemComponent,
     PokemonComponent,
-    AddPokemonComponent
+    AddPokemonComponent,
+    PokemonWeaknessComponent,
+    PokemonTypeComponent
   ],
   imports: [
     BrowserModule,
