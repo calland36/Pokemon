@@ -34,13 +34,10 @@ export class PokemonTypeComponent implements OnInit {
   }
 
   setTypes(){
-    console.log("We are setting types= "+ this.pokimanx.type);
     if(this.pokimanx.type.includes('Fire')){
-      console.log("Hit this Fire= "+ this.pokimanx.type);
       this.Fire= true;
     }
     if(this.pokimanx.type.includes('Water')){
-      console.log("Hit this Water= "+ this.pokimanx.type);
       this.Water= true;
     }
     if(this.pokimanx.type.includes('Flying')){

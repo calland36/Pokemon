@@ -1,6 +1,11 @@
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- <app-add-task (onAddTask)="addTask($event)"></app-add-task> -->
 <app-add-pokemon (onAddPokemonCard)="addPokemonCard($event)"></app-add-pokemon>
-<input type="text" class="search" [(ngModel)]="searchText" />
+<input
+  type="text"
+  placeholder="Search..."
+  class="search"
+  [(ngModel)]="searchText"
+/>
 <br />
 <app-pokemon-item
   *ngFor="let pokiman of pokemonCards | filter: searchText"

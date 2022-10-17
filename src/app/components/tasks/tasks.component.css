@@ -1,4 +1,8 @@
 .search{
-    align-self: center;
-    width: 60%;
+    align-self: right;
+    width: 65%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-bottom: 20px;
 }

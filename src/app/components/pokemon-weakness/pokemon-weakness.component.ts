@@ -35,14 +35,10 @@ export class PokemonWeaknessComponent implements OnInit {
   ngOnInit(): void {}
 
   setTypess(){
-    console.log("Why we not hit this Calland?");
-    console.log("We are setting WEAKNESS types= "+ this.pokimanx);
-    if(this.pokimanx.weakness.includes('Fire')){
-      console.log("Hit this Fire= "+ this.pokimanx.weakness);
+       if(this.pokimanx.weakness.includes('Fire')){
       this.Fire= true;
     }
     if(this.pokimanx.weakness.includes('Water')){
-      console.log("Hit this Water= "+ this.pokimanx.weakness);
       this.Water= true;
     }
     if(this.pokimanx.weakness.includes('Flying')){

@@ -11,12 +11,13 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   title = 'Pokemon';
   showAddTask!: boolean;
+  showAddPokemon: boolean= false;
   subscription!: Subscription;
 
   constructor(private uiService: UiService, private router: Router) {
     this.subscription = this.uiService
       .onToggle()
-      .subscribe((value) => (this.toggleAddPokemon = value));
+      .subscribe((value) => (this.showAddPokemon = value));
   }
 
   ngOnInit(): void {}

@@ -14,10 +14,14 @@ export class AddPokemonComponent implements OnInit {
   type!: string;
   weakness!: string;
   image!: string;
-  
+  showAddPokemon!: boolean;
+  subscription!: Subscription;
 
-  constructor() {
-    
+
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddPokemon = value));
   }
 
   ngOnInit(): void {}
