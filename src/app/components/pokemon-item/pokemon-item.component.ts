@@ -17,6 +17,17 @@ export class PokemonItemComponent implements OnInit {
   Grass: boolean=false;
   Ground: boolean=false;
   Poison: boolean=false;
+  Bug: boolean=false;
+  Normal: boolean=false;
+  Fairy: boolean=false;
+  Fighting: boolean=false;
+  Rock: boolean=false;
+  Steel: boolean=false;
+  Ice: boolean=false;
+  Ghost: boolean=false;
+  Psychic: boolean=false;
+  Electric: boolean=false;
+  Dragon: boolean=false;
 
 
   constructor() {}
@@ -60,6 +71,39 @@ export class PokemonItemComponent implements OnInit {
     }
     if(this.pokimanx.type.includes('Poison')){
       this.Poison= true;
+    }
+    if(this.pokimanx.type.includes('Bug')){
+      this.Bug= true;
+    }
+    if(this.pokimanx.type.includes('Normal')){
+      this.Normal= true;
+    }
+    if(this.pokimanx.type.includes('Fairy')){
+      this.Fairy= true;
+    }
+    if(this.pokimanx.type.includes('Fighting')){
+      this.Fighting= true;
+    }
+    if(this.pokimanx.type.includes('Rock')){
+      this.Rock= true;
+    }
+    if(this.pokimanx.type.includes('Steel')){
+      this.Steel= true;
+    }
+    if(this.pokimanx.type.includes('Ice')){
+      this.Ice= true;
+    }
+    if(this.pokimanx.type.includes('Ghost')){
+      this.Ghost= true;
+    }
+    if(this.pokimanx.type.includes('Psychic')){
+      this.Psychic= true;
+    }
+    if(this.pokimanx.type.includes('Electric')){
+      this.Electric= true;
+    }
+    if(this.pokimanx.type.includes('Dragon')){
+      this.Dragon= true;
     }
   }
     

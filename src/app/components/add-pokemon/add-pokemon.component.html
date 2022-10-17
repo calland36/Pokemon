@@ -1,28 +1,46 @@
 
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
-
 <form class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
-      <label for="text">Task</label>
+      <label for="text">Name</label>
       <input
         type="text"
-        name="text"
-        [(ngModel)]="text"
-        id="text"
-        placeholder="Add Task"
+        name="name"
+        [(ngModel)]="name"
+        id="name"
+        placeholder="Enter Pokemon Name"
       />
     </div>
     <div class="form-control">
-      <label for="text">Day & Time</label>
+      <label for="text">Type</label>
       <input
         type="text"
-        name="day"
-        [(ngModel)]="day"
-        id="day"
-        placeholder="Add Day & Time"
+        name="type"
+        [(ngModel)]="type"
+        id="type"
+        placeholder="Add Pokemon Type"
       />
     </div>
-    <div class="form-control form-control-check">
+    <div class="form-control">
+        <label for="text">Weakness</label>
+        <input
+          type="text"
+          name="weakness"
+          [(ngModel)]="weakness"
+          id="weakness"
+          placeholder="Add Pokemon Weakness"
+        />
+      </div>
+      <div class="form-control">
+        <label for="text">Image url</label>
+        <input
+          type="text"
+          name="image"
+          [(ngModel)]="image"
+          id="image"
+          placeholder="Add Pokemon Image url"
+        />
+      </div>
+    <!-- <div class="form-control form-control-check">
       <label for="text">Set Reminder</label>
       <input
         type="checkbox"
@@ -30,8 +48,8 @@
         [(ngModel)]="reminder"
         id="reminder"
       />
-    </div>
-    {{ text }}
-    <input type="submit" value="Save Task" class="btn btn-block" />
+    </div> -->
+
+    <input type="submit" value="Save Pokemon" class="btn btn-block" />
   </form>
   

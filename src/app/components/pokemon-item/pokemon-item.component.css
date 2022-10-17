@@ -37,6 +37,72 @@
     
     color: #fff;
 }
+.Normal{
+    background: linear-gradient(180deg, #a4acaf 50%, #b97fc9 50%);
+    background-color: #a4acaf;
+    
+    color: #212121;
+}
+.Bug{
+    background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
+    background-color: #729f3f;
+    
+    color: #fff;
+}
+.Fairy{
+    background: linear-gradient(180deg, #fdb9e9 50%, #b97fc9 50%);
+    background-color: #fdb9e9;
+    
+    color: #212121;
+}
+.Fighting{
+    background: linear-gradient(180deg, #d56723 50%, #b97fc9 50%);
+    background-color: #d56723;
+    
+    color: #fff;
+}
+.Rock{
+    background: linear-gradient(180deg, #a38c21 50%, #b97fc9 50%);
+    background-color: #a38c21;
+    
+    color: #fff;
+}
+.Steel{
+    background: linear-gradient(180deg, #9eb7b8 50%, #b97fc9 50%);
+    background-color: #9eb7b8;
+    
+    color: #fff;
+}
+.Ice{
+    background: linear-gradient(180deg, #51c4e7 50%, #b97fc9 50%);
+    background-color: #51c4e7;
+    
+    color: #212121;
+}
+.Ghost{
+    background: linear-gradient(180deg, #7b62a3 50%, #b97fc9 50%);
+    background-color: #7b62a3;
+    
+    color: #fff;
+}
+.Psychic{
+    background: linear-gradient(180deg, #f366b9 50%, #b97fc9 50%);
+    background-color: #f366b9;
+    
+    color: #fff;
+}
+.Electric{
+    background: linear-gradient(180deg, #eed535 50%, #b97fc9 50%);
+    background-color: #eed535;
+    
+    color: #212121;
+}
+.Dragon{
+    background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+    background-color: #53a4cf;
+    
+    color: #fff;
+}
 
 .pokemon-results{
     font-family: "Flexo-Medium",arial,sans-serif;

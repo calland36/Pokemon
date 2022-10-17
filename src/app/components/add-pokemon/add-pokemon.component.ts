@@ -24,7 +24,7 @@ export class AddPokemonComponent implements OnInit {
 
   onSubmit() {
     if (!this.name) {
-      alert('Please add a name!');
+      alert('Please input a name!');
       return;
     }
 
@@ -40,5 +40,9 @@ export class AddPokemonComponent implements OnInit {
     // this.text = '';
     // this.day = '';
     // this.reminder = false;
+    this.name = '';
+    this.type = '';
+    this.weakness = '';
+    this.image = '';
   }
 }

@@ -62,6 +62,13 @@
       "type": "Water",
       "weakness": "Grass/Electric",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
+    },
+    {
+      "name": "Caterpie",
+      "type": "Bug",
+      "weakness": "Fire/Flying/Rock",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png",
+      "id": 10
     }
   ],
   "tasks": [
