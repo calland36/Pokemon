@@ -1,79 +1,20 @@
 <div class="pokemon-results">
-<div>
-  {{setTypes()}}
-  <h2>
-    {{ pokimanx.name }}
-  </h2>
-</div>
-<div class="type">
-
-  <h4>Type:</h4>
-  <!-- {{ pokimanx.type }} -->
-  <div *ngIf="Fire">
-    <div class ="Fire">Fire</div>
-  </div>
-  <div *ngIf="Water">
-    <div class ="Water">Water</div>
-  </div>
-  <div *ngIf="Flying">
-    <div class ="Flying">Flying</div>
-  </div>
-  <div *ngIf="Grass">
-    <div class ="Grass">Grass</div>
-  </div>
-  <div *ngIf="Ground">
-    <div class ="Ground">Ground</div>
-  </div>
-  <div *ngIf="Poison">
-    <div class ="Poison">Poison</div>
-  </div>
-  <div *ngIf="Bug">
-    <div class ="Bug">Bug</div>
-  </div>
-  <div *ngIf="Normal">
-    <div class ="Normal">Normal</div>
-  </div>
-  <div *ngIf="Fairy">
-    <div class ="Fairy">Fairy</div>
-  </div>
-  <div *ngIf="Fighting">
-    <div class ="Fighting">Fighting</div>
-  </div>
-  <div *ngIf="Rock">
-    <div class ="Rock">Rock</div>
-  </div>
-  <div *ngIf="Steel">
-    <div class ="Steel">Steel</div>
-  </div>
-  <div *ngIf="Ice">
-    <div class ="Ice">Ice</div>
-  </div>
-  <div *ngIf="Ghost">
-    <div class ="Ghost">Ghost</div>
-  </div>
-  <div *ngIf="Psychic">
-    <div class ="Psychic">Psychic</div>
-  </div>
-  <div *ngIf="Electric">
-    <div class ="Electric">Electric</div>
-  </div>
-  <div *ngIf="Dragon">
-    <div class ="Dragon">Dragon</div>
-  </div>
-
-
-  </div>
   <div>
-  <h4>Weakness:</h4>
-  {{ pokimanx.weakness }}
-</div>
-<div>
-  <br />
-  <img src="{{ pokimanx.image }}" />
-</div>
+    <h2>
+      {{ pokimanx.name }}
+    </h2>
+  </div>
 
-<h1>
-  {{getMet()}}
-</h1>
-</div>
+  <app-pokemon-type [pokimanx]="pokimanx"></app-pokemon-type>
 
+  <app-pokemon-weakness [pokimanx]="pokimanx"></app-pokemon-weakness>
+
+  <div>
+    <br />
+    <img src="{{ pokimanx.image }}" />
+  </div>
+
+  <h1>
+    {{ getMet() }}
+  </h1>
+</div>
