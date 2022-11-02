@@ -102,6 +102,12 @@
     margin-bottom: 3px;
     color: #fff;
 }
+.Dark{
+    background: linear-gradient(180deg, #707070  50%, #707070  50%);
+    background-color: #707070 ;
+    margin-bottom: 3px;
+    color: #fff;
+}
 .type{
     text-align: center;
     margin-left: 60px;
