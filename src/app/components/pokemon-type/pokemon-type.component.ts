@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { single } from 'rxjs';
 import { PokemonCard } from 'src/app/PokemonCard';
 
 @Component({
@@ -27,6 +28,8 @@ export class PokemonTypeComponent implements OnInit {
   Psychic: boolean=false;
   Electric: boolean=false;
   Dragon: boolean=false;
+  singleCall: boolean= true;
+
 
   constructor() { }
 
@@ -34,6 +37,8 @@ export class PokemonTypeComponent implements OnInit {
   }
 
   setTypes(){
+    console.log("singleCall is= "+ this.singleCall);
+    if( this.singleCall){
     if(this.pokimanx.type.includes('Fire')){
       this.Fire= true;
     }
@@ -85,6 +90,8 @@ export class PokemonTypeComponent implements OnInit {
     if(this.pokimanx.type.includes('Dragon')){
       this.Dragon= true;
     }
+  }
+  this.singleCall=false;
   }
 
 }

@@ -121,6 +121,11 @@
     margin-left: 60px;
     margin-right:60px;
 }
+.image{
+    box-sizing: 121x121 px;
+    size: 121x121 px;
+    
+}
 .hold{
     margin: 10px 80px 10px;
     max-width: 110px;
