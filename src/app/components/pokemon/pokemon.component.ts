@@ -16,11 +16,14 @@ export class PokemonComponent implements OnInit {
   faTimes = faTimes;
 
   constructor(private pokemonService: PokemonService) { }
+  
+  
 
   ngOnInit(): void {
-    console.log("hit ngoninit for pokemon.componeonts");
-    this.pokemonService.getPokemonCards().subscribe((pokemonCards) => (this.pokemonCards = pokemonCards));
+    console.log("hit ngoninit for pokemon.components");
+    //this.pokemonService.getPokemonCards().subscribe((pokemonCards) => (this.pokemonCards = pokemonCards));
 
+    
   }
 
   addPokemonCard(pokemonCard: PokemonCard){

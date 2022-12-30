@@ -3,6 +3,7 @@ import { Task } from '../../Task';
 import { PokemonCard } from '../../PokemonCard';
 import { PokemonService } from '../../services/pokemon.service';
 import { TaskService } from '../../services/task.service';
+import { PokeapiService } from 'src/app/services/pokeapi.service';
 
 
 @Component({
@@ -15,8 +16,9 @@ export class TasksComponent implements OnInit {
   pokemonCards: PokemonCard[] = [];
   searchText!: string;
   holdst!: string;
+  pokemonApiResults: any[] = [];
 
-  constructor(private taskService: TaskService, private pokemonService: PokemonService) {}
+  constructor(private taskService: TaskService, private pokemonService: PokemonService,  private pokemonApiService: PokeapiService) {}
 
   ngOnInit(): void {
 
@@ -29,6 +31,17 @@ export class TasksComponent implements OnInit {
     console.log("This is 'tasks' "+ this.holdst);
 
     console.log("hit 3");
+    console.log("Attempting get from PokeAPI");
+
+    this.pokemonApiService.getPokemons().subscribe((response: any) => {
+      response.results.forEach((result: { name: string; }) => {
+        this.pokemonApiService.getMoreData(result.name)
+          .subscribe((uniqueResponse: any) =>{
+            this.pokemonApiResults.push(uniqueResponse);
+            console.log(this.pokemonApiResults);
+          });
+      })
+    });
 
   }
 

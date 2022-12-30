@@ -13,6 +13,11 @@
 >
 </app-pokemon-item>
 
+<div class="pokemon-grid">
+  <div class="box" *ngFor="let pokemonApi of pokemonApiResults">
+    <img [src]="pokemonApi.sprites.front_default" alt = "Pokemon">
+  </div>
+</div>
 <!--
 <app-task-item
   *ngFor="let taskie of tasks"

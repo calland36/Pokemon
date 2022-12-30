@@ -114,12 +114,13 @@
     font-family: "Flexo-Medium",arial,sans-serif;
     border-radius: 3px;
     line-height: 18px;
-    
+    height: 250px;
     border: 50px;
     width: 30%;
     float: left;
     font-size: 11px;
     text-align: center;
+    margin-bottom: 180px;    
     
 }
 .type{

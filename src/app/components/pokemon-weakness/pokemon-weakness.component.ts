@@ -59,7 +59,7 @@ export class PokemonWeaknessComponent implements OnInit {
 
   setWeakness(){
     if (this.singleCall){
-    console.log("Hit set Weakness 1 time");
+    //console.log("Hit set Weakness 1 time");
 
     if(this.pokimanx.type.includes('Fire')){
       this.FireValue= this.FireValue * 0.5;
@@ -235,14 +235,16 @@ export class PokemonWeaknessComponent implements OnInit {
       this.FairyValue= this.FairyValue * 2;
 
     }
+
+  
   }
   this.singleCall=false;
   }
 
   setTypess(){
     if (this.singleCallType){
-      console.log("Hit set Weakness 1 time");
-    console.log("Hit set type 1 time = "+ this.pokimanx.name);
+      //console.log("Hit set Weakness 1 time");
+    //console.log("Hit set type 1 time = "+ this.pokimanx.name);
 
   if(this.FireValue>= 1.5 ){
       this.Fire = true;

@@ -155,8 +155,8 @@
       "id": 22
     }, 
 {
-      "name": "",
-      "type": "Bug/",
+      "name": "Arbok",
+      "type": "Poison",
       "weakness": "",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png",
       "id": 23
@@ -308,6 +308,7 @@
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/044.png",
       "id": 44
 }
+
   ],
   "tasks": [
     {

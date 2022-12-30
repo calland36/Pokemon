@@ -37,7 +37,7 @@ export class PokemonTypeComponent implements OnInit {
   }
 
   setTypes(){
-    console.log("singleCall is= "+ this.singleCall);
+    //console.log("singleCall is= "+ this.singleCall);
     if( this.singleCall){
     if(this.pokimanx.type.includes('Fire')){
       this.Fire= true;
