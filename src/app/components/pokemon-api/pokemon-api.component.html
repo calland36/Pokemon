@@ -1,0 +1,19 @@
+<p>pokemon-api works!</p>
+
+<div class="pokemon-grid">
+    <div class="box" *ngFor="let pokemonApi of pokemonApix">
+      <p>
+      <img [src]="pokemonApi.sprites.front_default" alt = "Pokemon">
+      </p>
+      <p>
+          <b>Type</b>  
+          <div class="box" *ngFor="let typesx of pokemonApi.types">
+          {{typesx.type.name}}
+          <!--<app-pokemon-weakness [apiType]="typesx.type.name"></app-pokemon-weakness> -->
+        </div>
+        <app-pokemon-weakness [apiTypeArray]="pokemonApi.types"></app-pokemon-weakness>
+
+          <!--{{pokemonApi.types[1].type.name}} -->
+      
+    </div>
+  </div>

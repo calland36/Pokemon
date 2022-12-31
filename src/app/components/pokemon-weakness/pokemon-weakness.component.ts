@@ -10,6 +10,9 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class PokemonWeaknessComponent implements OnInit {
   @Input() pokimanx!: PokemonCard;
+  //@Input() apiType!: String;
+  @Input() apiTypeArray!: any[];
+
 
   Fire!: boolean ;
   Water!: boolean;
@@ -51,195 +54,30 @@ export class PokemonWeaknessComponent implements OnInit {
   ElectricValue: number=1 ;
   DragonValue: number=1 ;
   DarkValue: number=1 ;
-  
+  count: number=1 ;
 
   constructor() { }
 
   ngOnInit(): void {}
 
-  setWeakness(){
-    if (this.singleCall){
-    //console.log("Hit set Weakness 1 time");
+  getApi(){
+    
+    // if(this.apiTypeArray){
+    //   console.log(this.apiTypeArray);
+    // this.apiTypeArray.forEach(apiType => this.setApiType(apiType.type.name));
+    // }
+    if(this.apiTypeArray[0]){
+      this.setApiType(this.apiTypeArray[0].type.name);
+    }
+    if(this.apiTypeArray[1]){
+      this.singleCallType = false;
+       console.log("this is 1 " + this.apiTypeArray[1].type.name);
 
-    if(this.pokimanx.type.includes('Fire')){
-      this.FireValue= this.FireValue * 0.5;
-      this.WaterValue=this.WaterValue * 2;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.IceValue = this.IceValue * 0.5;
-      this.RockValue= this.RockValue * 2;
-      this.BugValue= this.BugValue * 0.5;
-      this.GroundValue= this.GroundValue * 2;
-      this.SteelValue= this.SteelValue * 0.5;
-      this.FairyValue= this.FairyValue * 0.5;
+      this.setApiType(this.apiTypeArray[1].type.name);
     }
-    if(this.pokimanx.type.includes('Water')){
-      this.FireValue= this.FireValue * 0.5;
-      this.WaterValue= this.WaterValue * 0.5;
-      this.ElectricValue= this.ElectricValue * 2;
-      this.GrassValue= this.GrassValue * 2;
-      this.IceValue= this.IceValue * 0.5;
-      this.SteelValue= this.SteelValue * 0.5;
-
-    }
-    if(this.pokimanx.type.includes('Flying')){
-      this.ElectricValue= this.ElectricValue * 2;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.IceValue= this.IceValue * 2;
-      this.FightingValue= this.FightingValue * 1.5;
-      this.GroundValue= 0;
-      this.BugValue= this.BugValue * 0.5;
-      this.RockValue= this.RockValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Grass')){
-      this.FireValue= this.FireValue * 2;
-      this.WaterValue= this.WaterValue * 0.5;
-      this.ElectricValue= this.ElectricValue * 0.5;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.IceValue= this.IceValue * 2;
-      this.PoisonValue= this.PoisonValue * 2;
-      this.GroundValue= this.GroundValue * 0.5;
-      this.FlyingValue= this.FlyingValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Ground')){
-      this.WaterValue= this.WaterValue * 2;
-      this.ElectricValue= this.ElectricValue * 0;
-      this.GrassValue= this.GrassValue * 2;
-      this.IceValue= this.IceValue * 2;
-      this.PoisonValue= this.PoisonValue *0.5;
-      this.RockValue= this.RockValue * 0.5;
-
-    }
-    if(this.pokimanx.type.includes('Poison')){
-      this.GrassValue= this.GrassValue * 0.5;
-      this.PoisonValue= this.PoisonValue * 0.5;
-      this.FightingValue= this.FightingValue * 0.5;
-      this.GroundValue= this.GroundValue * 2;
-      this.PsychicValue= this.PsychicValue * 2;
-      this.BugValue= this.BugValue * 0.5;
-      this.RockValue= this.RockValue * 0.5;
-      this.DarkValue= this.DarkValue * 0.5;
-      this.FairyValue= this.FairyValue * 2;
-      
-
-    }
-    if(this.pokimanx.type.includes('Bug')){
-      this.FireValue= this.FireValue * 2;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.FightingValue= this.FightingValue * 0.5;
-      this.GroundValue= this.GroundValue * 0.5;
-      this.FlyingValue= this.FlyingValue * 2;
-      this.RockValue= this.RockValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Normal')){
-      this.FightingValue= this.FightingValue * 2;
-      this.GhostValue= 0;
-
-    }
-    if(this.pokimanx.type.includes('Fairy')){
-      this.FightingValue= this.FightingValue * 0.5;
-      this.PoisonValue= this.PoisonValue * 2;
-      this.BugValue= this.BugValue * 0.5;
-      this.DragonValue= this.DragonValue * 0;
-      this.DarkValue= this.DarkValue * 0.5;
-      this.SteelValue= this.SteelValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Fighting')){
-    this.FlyingValue= this.FlyingValue * 2;
-    this.PsychicValue= this.PsychicValue * 2;
-    this.BugValue= this.BugValue * 0.5;
-    this.RockValue= this.RockValue * 0.5;
-    this.DarkValue= this.DarkValue * 0.5;
-    this.FairyValue= this.FairyValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Rock')){
-      this.NormalValue= this.NormalValue * 0.5;
-      this.FireValue= this.FireValue *  0.5;
-      this.WaterValue= this.WaterValue * 2;
-      this.GrassValue= this.GrassValue * 2;
-      this.FightingValue= this.FightingValue * 2;
-      this.PoisonValue= this.PoisonValue * 0.5;
-      this.GroundValue= this.GroundValue * 2;
-      this.FlyingValue= this.FlyingValue * 0.5;
-      this.SteelValue= this.SteelValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Steel')){
-      this.NormalValue= this.NormalValue * 0.5;
-      this.FireValue= this.FireValue * 2;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.IceValue= this.IceValue * 0.5;
-      this.FightingValue= this.FightingValue * 2;
-      this.PoisonValue= this.PoisonValue * 0;
-      this.GroundValue= this.GroundValue * 2;
-      this.FlyingValue= this.FlyingValue * 0.5;
-      this.PsychicValue= this.PsychicValue * 0.5;
-      this.BugValue= this.BugValue * 0.5;
-      this.RockValue= this.RockValue * 0.5;
-      this.DragonValue= this.DragonValue * 0.5;
-      this.SteelValue= this.SteelValue * 0.5;
-      this.FairyValue= this.FairyValue * 0.5;
-
-    }
-    if(this.pokimanx.type.includes('Ice')){
-      this.FireValue= this.FireValue * 2;
-      this.IceValue= this.IceValue * 0.5;
-      this.FightingValue= this.FightingValue * 2;
-      this.RockValue= this.RockValue * 2;
-      this.SteelValue= this.SteelValue * 2;
-    }
-    if(this.pokimanx.type.includes('Ghost')){
-      this.NormalValue= this.NormalValue * 0;
-      this.FightingValue= this.FightingValue * 0;
-      this.PoisonValue= this.PoisonValue * 0.5;
-      this.BugValue= this.BugValue * 0.5;
-      this.GhostValue= this.GhostValue * 2;
-      this.DarkValue= this.DarkValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Psychic')){
-      this.FightingValue= this.FightingValue * 0.5;
-      this.PsychicValue= this.PsychicValue * 0.5;
-      this.BugValue= this.BugValue * 2;
-      this.GhostValue= this.GhostValue * 2;
-      this.DarkValue= this.DarkValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Electric')){
-      this.ElectricValue= this.ElectricValue * 0.5;
-      this.GroundValue= this.GroundValue * 2;
-      this.FlyingValue= this.FlyingValue * 0.5;
-      this.SteelValue= this.SteelValue * 0.5;
-
-    }
-    if(this.pokimanx.type.includes('Dragon')){
-      this.FireValue= this.FireValue * 0.5;
-      this.WaterValue= this.WaterValue * 0.5;
-      this.ElectricValue= this.ElectricValue * 0.5;
-      this.GrassValue= this.GrassValue * 0.5;
-      this.IceValue= this.IceValue * 2;
-      this.DragonValue= this.DragonValue * 2;
-      this.FairyValue= this.FairyValue * 2;
-
-    }
-    if(this.pokimanx.type.includes('Dark')){
-      this.FightingValue= this.FightingValue * 2;
-      this.PsychicValue= this.PsychicValue * 0;
-      this.BugValue= this.BugValue * 2;
-      this.GhostValue= this.GhostValue * 0.5;
-      this.DarkValue= this.DarkValue * 0.5;
-      this.FairyValue= this.FairyValue * 2;
-
-    }
+  }
 
   
-  }
-  this.singleCall=false;
-  }
 
   setTypess(){
     if (this.singleCallType){
@@ -302,9 +140,382 @@ export class PokemonWeaknessComponent implements OnInit {
   } 
 }
 this.singleCallType = false;
+  }
+
+  setApiType( ptype: any){
+    
+      if (this.singleCall){
+        console.log("Ptype= " +ptype);
+  
+      if(ptype.includes('fire')){
+        console.log("ptype includes fire [rock start= "+ this.RockValue);
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue=this.WaterValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue = this.IceValue * 0.5;
+        this.RockValue= this.RockValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.SteelValue= this.SteelValue * 0.5;
+        this.FairyValue= this.FairyValue * 0.5;
+        console.log("ptype includes fire [rock end= "+ this.RockValue);
+      }
+      if(ptype.includes('water')){
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 2;
+        this.GrassValue= this.GrassValue * 2;
+        this.IceValue= this.IceValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+  
+      }
+      if(ptype.includes('flying')){
+        console.log("ptype includes FLYING [rock start= "+ this.RockValue);
+        this.ElectricValue= this.ElectricValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.FightingValue= this.FightingValue * 1.5;
+        this.GroundValue= 0;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 2;
+        console.log("ptype includes FLYING [rock end= "+ this.RockValue);
+      }
+      if(ptype.includes('grass')){
+        this.FireValue= this.FireValue * 2;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.PoisonValue= this.PoisonValue * 2;
+        this.GroundValue= this.GroundValue * 0.5;
+        this.FlyingValue= this.FlyingValue * 2;
+  
+      }
+      if(ptype.includes('ground')){
+        this.WaterValue= this.WaterValue * 2;
+        this.ElectricValue= this.ElectricValue * 0;
+        this.GrassValue= this.GrassValue * 2;
+        this.IceValue= this.IceValue * 2;
+        this.PoisonValue= this.PoisonValue *0.5;
+        this.RockValue= this.RockValue * 0.5;
+  
+      }
+      if(ptype.includes('poison')){
+        this.GrassValue= this.GrassValue * 0.5;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.FightingValue= this.FightingValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.PsychicValue= this.PsychicValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 0.5;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.FairyValue= this.FairyValue * 2;
+        
+  
+      }
+      if(ptype.includes('bug')){
+        this.FireValue= this.FireValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.FightingValue= this.FightingValue * 0.5;
+        this.GroundValue= this.GroundValue * 0.5;
+        this.FlyingValue= this.FlyingValue * 2;
+        this.RockValue= this.RockValue * 2;
+  
+      }
+      if(ptype.includes('normal')){
+        this.FightingValue= this.FightingValue * 2;
+        this.GhostValue= 0;
+  
+      }
+      if(ptype.includes('fairy')){
+        this.FightingValue= this.FightingValue * 0.5;
+        this.PoisonValue= this.PoisonValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.DragonValue= this.DragonValue * 0;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.SteelValue= this.SteelValue * 2;
+  
+      }
+      if(ptype.includes('fighting')){
+      this.FlyingValue= this.FlyingValue * 2;
+      this.PsychicValue= this.PsychicValue * 2;
+      this.BugValue= this.BugValue * 0.5;
+      this.RockValue= this.RockValue * 0.5;
+      this.DarkValue= this.DarkValue * 0.5;
+      this.FairyValue= this.FairyValue * 2;
+  
+      }
+      if(ptype.includes('rock')){
+        this.NormalValue= this.NormalValue * 0.5;
+        this.FireValue= this.FireValue *  0.5;
+        this.WaterValue= this.WaterValue * 2;
+        this.GrassValue= this.GrassValue * 2;
+        this.FightingValue= this.FightingValue * 2;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.SteelValue= this.SteelValue * 2;
+  
+      }
+      if(ptype.includes('steel')){
+        this.NormalValue= this.NormalValue * 0.5;
+        this.FireValue= this.FireValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 0.5;
+        this.FightingValue= this.FightingValue * 2;
+        this.PoisonValue= this.PoisonValue * 0;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.PsychicValue= this.PsychicValue * 0.5;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 0.5;
+        this.DragonValue= this.DragonValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+        this.FairyValue= this.FairyValue * 0.5;
+  
+      }
+      if(ptype.includes('ice')){
+        this.FireValue= this.FireValue * 2;
+        this.IceValue= this.IceValue * 0.5;
+        this.FightingValue= this.FightingValue * 2;
+        this.RockValue= this.RockValue * 2;
+        this.SteelValue= this.SteelValue * 2;
+      }
+      if(ptype.includes('ghost')){
+        this.NormalValue= this.NormalValue * 0;
+        this.FightingValue= this.FightingValue * 0;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.BugValue= this.BugValue * 0.5;
+        this.GhostValue= this.GhostValue * 2;
+        this.DarkValue= this.DarkValue * 2;
+  
+      }
+      if(ptype.includes('psychic')){
+        this.FightingValue= this.FightingValue * 0.5;
+        this.PsychicValue= this.PsychicValue * 0.5;
+        this.BugValue= this.BugValue * 2;
+        this.GhostValue= this.GhostValue * 2;
+        this.DarkValue= this.DarkValue * 2;
+  
+      }
+      if(ptype.includes('electric')){
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+  
+      }
+      if(ptype.includes('dragon')){
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.DragonValue= this.DragonValue * 2;
+        this.FairyValue= this.FairyValue * 2;
+  
+      }
+      if(ptype.includes('dark')){
+        this.FightingValue= this.FightingValue * 2;
+        this.PsychicValue= this.PsychicValue * 0;
+        this.BugValue= this.BugValue * 2;
+        this.GhostValue= this.GhostValue * 0.5;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.FairyValue= this.FairyValue * 2;
+  
+      }
+  
+    
+    }
+    this.singleCall=false;
+    //this.setApiType();
+    }
 
 
 
+    setWeakness(){
+      if (this.singleCall){
+      console.log("Hit set Weakness 1 time");
+  
+      if(this.pokimanx.type.includes('Fire')){
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue=this.WaterValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue = this.IceValue * 0.5;
+        this.RockValue= this.RockValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.SteelValue= this.SteelValue * 0.5;
+        this.FairyValue= this.FairyValue * 0.5;
+      }
+      if(this.pokimanx.type.includes('Water')){
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 2;
+        this.GrassValue= this.GrassValue * 2;
+        this.IceValue= this.IceValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+  
+      }
+      if(this.pokimanx.type.includes('Flying')){
+        this.ElectricValue= this.ElectricValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.FightingValue= this.FightingValue * 1.5;
+        this.GroundValue= 0;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Grass')){
+        this.FireValue= this.FireValue * 2;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.PoisonValue= this.PoisonValue * 2;
+        this.GroundValue= this.GroundValue * 0.5;
+        this.FlyingValue= this.FlyingValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Ground')){
+        this.WaterValue= this.WaterValue * 2;
+        this.ElectricValue= this.ElectricValue * 0;
+        this.GrassValue= this.GrassValue * 2;
+        this.IceValue= this.IceValue * 2;
+        this.PoisonValue= this.PoisonValue *0.5;
+        this.RockValue= this.RockValue * 0.5;
+  
+      }
+      if(this.pokimanx.type.includes('Poison')){
+        this.GrassValue= this.GrassValue * 0.5;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.FightingValue= this.FightingValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.PsychicValue= this.PsychicValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 0.5;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.FairyValue= this.FairyValue * 2;
+        
+  
+      }
+      if(this.pokimanx.type.includes('Bug')){
+        this.FireValue= this.FireValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.FightingValue= this.FightingValue * 0.5;
+        this.GroundValue= this.GroundValue * 0.5;
+        this.FlyingValue= this.FlyingValue * 2;
+        this.RockValue= this.RockValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Normal')){
+        this.FightingValue= this.FightingValue * 2;
+        this.GhostValue= 0;
+  
+      }
+      if(this.pokimanx.type.includes('Fairy')){
+        this.FightingValue= this.FightingValue * 0.5;
+        this.PoisonValue= this.PoisonValue * 2;
+        this.BugValue= this.BugValue * 0.5;
+        this.DragonValue= this.DragonValue * 0;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.SteelValue= this.SteelValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Fighting')){
+      this.FlyingValue= this.FlyingValue * 2;
+      this.PsychicValue= this.PsychicValue * 2;
+      this.BugValue= this.BugValue * 0.5;
+      this.RockValue= this.RockValue * 0.5;
+      this.DarkValue= this.DarkValue * 0.5;
+      this.FairyValue= this.FairyValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Rock')){
+        this.NormalValue= this.NormalValue * 0.5;
+        this.FireValue= this.FireValue *  0.5;
+        this.WaterValue= this.WaterValue * 2;
+        this.GrassValue= this.GrassValue * 2;
+        this.FightingValue= this.FightingValue * 2;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.SteelValue= this.SteelValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Steel')){
+        this.NormalValue= this.NormalValue * 0.5;
+        this.FireValue= this.FireValue * 2;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 0.5;
+        this.FightingValue= this.FightingValue * 2;
+        this.PoisonValue= this.PoisonValue * 0;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.PsychicValue= this.PsychicValue * 0.5;
+        this.BugValue= this.BugValue * 0.5;
+        this.RockValue= this.RockValue * 0.5;
+        this.DragonValue= this.DragonValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+        this.FairyValue= this.FairyValue * 0.5;
+  
+      }
+      if(this.pokimanx.type.includes('Ice')){
+        this.FireValue= this.FireValue * 2;
+        this.IceValue= this.IceValue * 0.5;
+        this.FightingValue= this.FightingValue * 2;
+        this.RockValue= this.RockValue * 2;
+        this.SteelValue= this.SteelValue * 2;
+      }
+      if(this.pokimanx.type.includes('Ghost')){
+        this.NormalValue= this.NormalValue * 0;
+        this.FightingValue= this.FightingValue * 0;
+        this.PoisonValue= this.PoisonValue * 0.5;
+        this.BugValue= this.BugValue * 0.5;
+        this.GhostValue= this.GhostValue * 2;
+        this.DarkValue= this.DarkValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Psychic')){
+        this.FightingValue= this.FightingValue * 0.5;
+        this.PsychicValue= this.PsychicValue * 0.5;
+        this.BugValue= this.BugValue * 2;
+        this.GhostValue= this.GhostValue * 2;
+        this.DarkValue= this.DarkValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Electric')){
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GroundValue= this.GroundValue * 2;
+        this.FlyingValue= this.FlyingValue * 0.5;
+        this.SteelValue= this.SteelValue * 0.5;
+  
+      }
+      if(this.pokimanx.type.includes('Dragon')){
+        this.FireValue= this.FireValue * 0.5;
+        this.WaterValue= this.WaterValue * 0.5;
+        this.ElectricValue= this.ElectricValue * 0.5;
+        this.GrassValue= this.GrassValue * 0.5;
+        this.IceValue= this.IceValue * 2;
+        this.DragonValue= this.DragonValue * 2;
+        this.FairyValue= this.FairyValue * 2;
+  
+      }
+      if(this.pokimanx.type.includes('Dark')){
+        this.FightingValue= this.FightingValue * 2;
+        this.PsychicValue= this.PsychicValue * 0;
+        this.BugValue= this.BugValue * 2;
+        this.GhostValue= this.GhostValue * 0.5;
+        this.DarkValue= this.DarkValue * 0.5;
+        this.FairyValue= this.FairyValue * 2;
+  
+      }
+  
+    
+    }
+    this.singleCall=false;
+    }
 
     //    if(this.pokimanx.weakness.includes('Fire')){
     //   this.Fire= true;
@@ -360,7 +571,5 @@ this.singleCallType = false;
     // if(this.pokimanx.weakness.includes('Dark')){
     //   this.Dark= true;
     // }
- 
-}
 
 }

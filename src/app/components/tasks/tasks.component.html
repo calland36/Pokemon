@@ -7,23 +7,21 @@
   [(ngModel)]="searchText"
 />
 <br />
+<!-- Calland commented out to test PokemonAPI.
 <app-pokemon-item
   *ngFor="let pokiman of pokemonCards | filter: searchText"
   [pokimanx]="pokiman"
 >
 </app-pokemon-item>
+-->
 
-<div class="pokemon-grid">
-  <div class="box" *ngFor="let pokemonApi of pokemonApiResults">
-    <img [src]="pokemonApi.sprites.front_default" alt = "Pokemon">
-  </div>
-</div>
+<app-pokemon-api [pokemonApix]="pokemonApiResults">
+</app-pokemon-api>
+
+
+
 <!--
-<app-task-item
-  *ngFor="let taskie of tasks"
-  [taskx]="taskie"
-  (onDeleteTask)="deleteTask(taskie)"
-  (onToggleReminder)="toggleReminder(taskie)"
+<app-pokemon-type [pokimanx]="pokimanx"></app-pokemon-type>
 >
 </app-task-item>
 

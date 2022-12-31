@@ -38,7 +38,7 @@ export class TasksComponent implements OnInit {
         this.pokemonApiService.getMoreData(result.name)
           .subscribe((uniqueResponse: any) =>{
             this.pokemonApiResults.push(uniqueResponse);
-            console.log(this.pokemonApiResults);
+            //console.log(this.pokemonApiResults);
           });
       })
     });

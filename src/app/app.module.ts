@@ -21,6 +21,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
 import { PokemonWeaknessComponent } from './components/pokemon-weakness/pokemon-weakness.component';
 import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
+import { PokemonApiComponent } from './components/pokemon-api/pokemon-api.component';
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     PokemonComponent,
     AddPokemonComponent,
     PokemonWeaknessComponent,
-    PokemonTypeComponent
+    PokemonTypeComponent,
+    PokemonApiComponent
   ],
   imports: [
     BrowserModule,
