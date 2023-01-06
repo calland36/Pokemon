@@ -70,7 +70,7 @@ export class PokemonWeaknessComponent implements OnInit {
   getApi(){
     
     if(this.apiTypeArray){
-      console.log("this is apitype= "+this.apiTypeArray);
+      // console.log("this is apitype= "+this.apiTypeArray);
     //this.apiTypeArray.forEach(apiType => this.setApiType(apiType.type.name));
     }
     if(this.apiTypeArray[0]){
@@ -164,7 +164,6 @@ export class PokemonWeaknessComponent implements OnInit {
       if (this.singleCall){
   
         if(this.pokeType1.includes('fire') || this.pokeType2.includes('fire')){
-          console.log("this.pokeType1 includes fire [rock start= "+ this.RockValue);
           this.FireValue= this.FireValue * 0.5;
           this.WaterValue=this.WaterValue * 2;
           this.GrassValue= this.GrassValue * 0.5;
@@ -174,7 +173,6 @@ export class PokemonWeaknessComponent implements OnInit {
           this.GroundValue= this.GroundValue * 2;
           this.SteelValue= this.SteelValue * 0.5;
           this.FairyValue= this.FairyValue * 0.5;
-          console.log("this.pokeType1 includes fire [rock end= "+ this.RockValue);
         }
         if(this.pokeType1.includes('water') || this.pokeType2.includes('water')){
           this.FireValue= this.FireValue * 0.5;
@@ -186,7 +184,6 @@ export class PokemonWeaknessComponent implements OnInit {
     
         }
         if(this.pokeType1.includes('flying') || this.pokeType2.includes('flying')){
-          console.log("this.pokeType1 includes FLYING [rock start= "+ this.RockValue);
           this.ElectricValue= this.ElectricValue * 2;
           this.GrassValue= this.GrassValue * 0.5;
           this.IceValue= this.IceValue * 2;
@@ -194,7 +191,6 @@ export class PokemonWeaknessComponent implements OnInit {
           this.GroundValue= 0;
           this.BugValue= this.BugValue * 0.5;
           this.RockValue= this.RockValue * 2;
-          console.log("this.pokeType1 includes FLYING [rock end= "+ this.RockValue);
         }
         if(this.pokeType1.includes('grass') || this.pokeType2.includes('grass')){
           this.FireValue= this.FireValue * 2;
@@ -217,8 +213,6 @@ export class PokemonWeaknessComponent implements OnInit {
     
         }
         if(this.pokeType1.includes('poison') || this.pokeType2.includes('poison')){
-          console.log("this.pokeType2 includes Poison [rock end= "+ this.RockValue);
-
           this.GrassValue= this.GrassValue * 0.5;
           this.PoisonValue= this.PoisonValue * 0.5;
           this.FightingValue= this.FightingValue * 0.5;
@@ -228,7 +222,6 @@ export class PokemonWeaknessComponent implements OnInit {
           this.RockValue= this.RockValue * 0.5;
           this.DarkValue= this.DarkValue * 0.5;
           this.FairyValue= this.FairyValue * 2;
-          
     
         }
         if(this.pokeType1.includes('bug') || this.pokeType2.includes('bug')){
@@ -344,21 +337,8 @@ export class PokemonWeaknessComponent implements OnInit {
         }
   
     
-    }
-    // if(this.apiTypeArray[0].type.name.includes('grass')){ 
-    //   console.log("Calland check if 0 has grass.");
-    // }
-    // if(this.apiTypeArray[1].type.name.includes('grass')){ 
-    //   console.log("Calland check if 1 has grass.");
-    // }
-    // if(this.apiTypeArray[0].type.name.includes('poison')){ 
-    //   console.log("Calland check if 0 has poison.");
-    // }
-    // if(this.apiTypeArray[1].type.name.includes('poison')){ 
-    //   console.log("Calland check if 1 has poison.");
-    // }
+      }
     this.singleCall=false;
-    //this.setApiType();
     }
 
 
